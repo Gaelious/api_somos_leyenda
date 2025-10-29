@@ -1,0 +1,30 @@
+{
+  "name": "api-somos-leyenda",
+  "version": "1.0.0",
+  "description": "Esto es una API para somos_leyenda que conecta con la API de Devvex",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gaelious/api_somos_leyenda.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gaelious/api_somos_leyenda/issues"
+  },
+  "homepage": "https://github.com/Gaelious/api_somos_leyenda#readme",
+  "dependencies": {
+    "axios": "^1.13.1",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "standard": "^17.1.2"
+  },
+  "eslintConfig": {
+    "extends": "standard"
+  }
+}
