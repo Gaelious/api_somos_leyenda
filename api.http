@@ -1,0 +1,29 @@
+###Crear usuario
+POST http://localhost:3000/register
+Content-type: application/json
+
+{
+    "username": "ratatata",
+    "email": "tengoquesso@gmail.com",
+    "password": "123456",
+    "walletaddress": "0x13434d5df4356267890abcdef",
+    "level": 10
+    
+}
+###logear usuario
+POST http://localhost:3000/login
+Content-type: application/json
+
+{
+    "email": "tengoquesso@gmail.com",
+    "password": "123456"
+}
+
+###Ir a la ruta protegida
+GET http://localhost:3000/protected
+
+###Ir a la ruta principal usando un middleware
+GET http://localhost:3000/
+
+###Cerrar sesion del usuario
+POST http://localhost:3000/logout
