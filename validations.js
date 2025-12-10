@@ -4,8 +4,9 @@ const registerSchema = z.object({
   username: z.string().min(3, 'Username must be at least 3 characters long').max(20),
   email: z.string().email('Invalid email address'),
   password: z.string().min(6),
-  walletaddress: z.string().startsWith('0x', 'Wallet address tiene que empezar con 0x'),
-  level: z.number().int().min(1).max(11).optional()
+  level: z.number().int().min(1).max(11).optional(),
+  fullname: z.string().min(1, 'Full name is required'),
+  phone: z.string().optional()
 })
 
 export const loginSchema = registerSchema.pick({

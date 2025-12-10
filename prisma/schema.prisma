@@ -17,8 +17,30 @@ model users {
   id        String    @id @default(uuid())
   username  String    @unique
   email     String    @unique
+  fullName String?  
+  phone     String?
   password  String    
-  wallet    String?   @map("walletAddress") // '?' es opcional
+  wallet    String?   
   level     Int       @default(1)
+  devveAccessToken    String? @db.Text // @db.Text por si el token es muy largo
+  devveRefreshToken   String? @db.Text
+  devveTokenExpiresAt DateTime?
+  nfts nft[]
+}
+
+model nft {
+  id   String @id @default(uuid())
+  name String
+  assetUri  String  @db.Text
+  description String @db.Text
+  imageUri String 
+  ownerId String
+  ownerWallet String?
+  Tipo String?
+  Motivo String?
+  owner users @relation(fields: [ownerId], references: [id])
+  createdAt DateTime
+
+  level Int? 
 }
 

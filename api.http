@@ -1,29 +1,54 @@
 ###Crear usuario
-POST http://localhost:3000/register
+POST http://localhost:3000/auth/register
 Content-type: application/json
 
 {
-    "username": "ratatata",
-    "email": "tengoquesso@gmail.com",
-    "password": "123456",
-    "walletaddress": "0x13434d5df4356267890abcdef",
-    "level": 10
+    "username": "Linuxelgato",
+    "email": "aimarcblanco@gmail.com",
+    "fullname": "Aimar Cana",
+    "password": "Linuxelgato007.",
+    "level": 1
     
 }
-###logear usuario
-POST http://localhost:3000/login
+###VERIFICAR CUENTA
+POST http://localhost:3000/auth/verify
 Content-type: application/json
 
 {
-    "email": "tengoquesso@gmail.com",
-    "password": "123456"
+    "username": "Linuxelgato",
+    "code": "128572"
+}
+###REENVIAR CODIGO DE VERIFICACION
+POST http://localhost:3000/auth/resendCode
+Content-type: application/json
+
+{
+    "username": "Linuxelgato"
+}
+###logear usuario
+POST http://localhost:3000/auth/login
+Content-type: application/json
+
+{
+    "email": "gaelcanablanco03@gmail.com",
+    "password": "Linuxelgato00&"
 }
 
-###Ir a la ruta protegida
-GET http://localhost:3000/protected
+###CREAR NFT
+POST http://localhost:3000/nfts/create
 
 ###Ir a la ruta principal usando un middleware
 GET http://localhost:3000/
-
 ###Cerrar sesion del usuario
-POST http://localhost:3000/logout
+POST http://localhost:3000/auth/logout
+###ENVIAR NFT A OTRO USUARIO
+POST http://localhost:3000/nfts/send
+Content-Type: application/json
+
+{
+    "nftUri":"devv://DevvETestnet/A/aTBkAjByXvKw1UJ5NHOx_._RGyubn_LvAP.jK5XMiAOdpDA4CVFf3zuS.HtpnV2FfjMJniMCMGDrNoAPqyb05YGvhzqlxZk6HvSv9Z.hjrFXGhMp9OrAGSTugSReLTRgUxGu1RsjRgAAAA--",
+    "recipientAddress":"03D4AFD51B3D9F25C94C1B9140D312099A90806A7BEBBC498158BC9F2FCB2B825C",
+    "comment":"Esto es una prueba de envio de nfts"
+}
+###LISTAR NFTS
+POST http://localhost:3000/nfts/list
